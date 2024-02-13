@@ -3,10 +3,16 @@
  */
 package wcq.ramp.up;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 import java.util.Arrays;
 
+@SpringBootApplication
 public class App {
     public static void main(String[] args) {
+
+        SpringApplication.run(App.class, args);
         int[] numbers = {8, 12, 16};
         int gcd = GCDEuclideanAlg.findGCD(numbers);
         System.out.println("GCD of " + Arrays.toString(numbers) + " is: " + gcd);
