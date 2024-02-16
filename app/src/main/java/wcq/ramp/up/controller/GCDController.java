@@ -1,6 +1,7 @@
 package wcq.ramp.up.controller;
 
 import org.springframework.web.bind.annotation.*;
+import wcq.ramp.up.datainput.Data;
 import wcq.ramp.up.model.GCDModel;
 import wcq.ramp.up.service.GCDService;
 
@@ -32,12 +33,13 @@ public class GCDController {
     }
 
     @PostMapping("")
-    public void addGCD(@RequestBody GCDModel gcd) {
-        service.saveGCD(gcd);
+    public void addGCD(@RequestBody  Data data  ) {
+        System.out.println(data);
+        service.saveGCD(data.convertToModel());
     }
 
     @PutMapping("/{id}")
-    public void updateGCD(@RequestBody GCDModel gcd, @PathVariable Long id) {
-        service.updateGCD(gcd, id);
+    public void updateGCD(@RequestBody Data data, @PathVariable Long id) {
+        service.updateGCD(data.convertToModel(), id);
     }
 }

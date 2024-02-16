@@ -14,6 +14,10 @@ public class GCDModel {
     public GCDModel() {
     }
 
+    public GCDModel(Integer result) {
+        this.result = result;
+    }
+
     public Long getId() {
         return id;
     }
@@ -38,7 +42,5 @@ public class GCDModel {
                 '}';
     }
 }
-
-
 
 
